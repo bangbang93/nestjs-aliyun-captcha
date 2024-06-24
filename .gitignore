@@ -81,4 +81,4 @@ node_modules
 /*.heapsnapshot
 /doc
 .vscode
-dist
+lib
