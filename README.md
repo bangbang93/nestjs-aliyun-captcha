@@ -1,24 +1,24 @@
 # README
 
-## 项目名称
+## Project Name
 
 nestjs-aliyun-captcha
 
-## 项目描述
+## Project Description
 
-这是一个为NestJS提供的阿里云验证码模块。
+This is an Aliyun Captcha module provided for NestJS.
 
-## 安装
+## Installation
 
-使用npm进行安装：
+Install using npm:
 
 ```bash
 npm install nestjs-aliyun-captcha
 ```
 
-## 使用方法
+## Usage
 
-首先，你需要在你的模块中导入`AliyunCaptchaModule`：
+First, you need to import `AliyunCaptchaModule` in your module:
 
 ```typescript
 import { AliyunCaptchaModule } from 'nestjs-aliyun-captcha';
@@ -28,16 +28,16 @@ import { AliyunCaptchaModule } from 'nestjs-aliyun-captcha';
     AliyunCaptchaModule.register({
       accessKeyId: 'your-access-key-id',
       accessKeySecret: 'your-access-key-secret',
-      endpoint: 'your-endpoint', // 可选，默认为 'captcha.cn-shanghai.aliyuncs.com'
-      connectTimeout: 10000, // 可选
-      readTimeout: 10000, // 可选
+      endpoint: 'your-endpoint', // Optional, default is 'captcha.cn-shanghai.aliyuncs.com'
+      connectTimeout: 10000, // Optional
+      readTimeout: 10000, // Optional
     }),
   ],
 })
 export class AppModule {}
 ```
 
-然后，你可以在你的路由守卫中使用`AliyunCaptchaGuard`：
+Then, you can use `AliyunCaptchaGuard` in your route guard:
 
 ```typescript
 import { Controller, UseGuards } from '@nestjs/common';
@@ -50,40 +50,40 @@ export class YourController {
 }
 ```
 
-`AliyunCaptchaGuard`会检查请求的query或body中的`captchaVerifyParam`字段，并使用它来验证验证码。
+`AliyunCaptchaGuard` will check the `captchaVerifyParam` field in the request's query or body, and use it to verify the captcha.
 
-## 开发
+## Development
 
-项目使用TypeScript进行开发，你可以使用以下命令进行构建：
+The project is developed using TypeScript, you can use the following command to build:
 
 ```bash
 npm run build
 ```
 
-项目使用ESLint进行代码检查，你可以使用以下命令进行检查：
+The project uses ESLint for code checking, you can use the following command to check:
 
 ```bash
 npm run lint
 ```
 
-如果你想自动修复一些可修复的问题，你可以使用以下命令：
+If you want to automatically fix some fixable issues, you can use the following command:
 
 ```bash
 npm run lint:fix
 ```
 
-项目使用Prettier进行代码格式化，你可以使用以下命令进行格式化：
+The project uses Prettier for code formatting, you can use the following command to format:
 
 ```bash
 npm run format
 ```
 
-如果你想检查代码是否符合Prettier的格式，你可以使用以下命令：
+If you want to check whether the code conforms to the format of Prettier, you can use the following command:
 
 ```bash
 npm run format:check
 ```
 
-## 许可证
+## License
 
-本项目使用MIT许可证。
+This project uses the MIT license.
