@@ -1,8 +1,8 @@
 import Client, {VerifyCaptchaRequest} from '@alicloud/captcha20230305'
 import {Config} from '@alicloud/openapi-client'
 import {Inject, Injectable} from '@nestjs/common'
+import {AliyunCaptchaOptions, MODULE_OPTIONS_TOKEN} from './aliyun-captcha-configure.module'
 import {CaptchaError} from './captcha-error'
-import {AliyunCaptchaOptions, MODULE_OPTIONS_TOKEN} from './index'
 
 @Injectable()
 export class AliyunCaptchaService {

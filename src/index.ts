@@ -1,18 +1,8 @@
 import {Config} from '@alicloud/openapi-client'
-import {ConfigurableModuleBuilder, Module} from '@nestjs/common'
+import {Module} from '@nestjs/common'
+import {AliyunCaptchaOptions, ConfigurableModuleClass, MODULE_OPTIONS_TOKEN} from './aliyun-captcha-configure.module'
+import {AliyunCaptchaGuard} from './aliyun-captcha.guard'
 import {AliyunCaptchaService} from './aliyun-captcha.service'
-
-export interface AliyunCaptchaOptions {
-  accessKeyId: string
-  accessKeySecret: string
-  endpoint?: string
-  connectTimeout?: number
-  readTimeout?: number
-  sceneId?: string
-}
-
-export const {ConfigurableModuleClass, MODULE_OPTIONS_TOKEN} =
-  new ConfigurableModuleBuilder<AliyunCaptchaOptions>().build()
 
 @Module({
   providers: [
@@ -30,7 +20,8 @@ export const {ConfigurableModuleClass, MODULE_OPTIONS_TOKEN} =
       },
     },
     AliyunCaptchaService,
+    AliyunCaptchaGuard,
   ],
-  exports: [AliyunCaptchaService],
+  exports: [AliyunCaptchaService, AliyunCaptchaGuard, MODULE_OPTIONS_TOKEN],
 })
 export class AliyunCaptchaModule extends ConfigurableModuleClass {}
