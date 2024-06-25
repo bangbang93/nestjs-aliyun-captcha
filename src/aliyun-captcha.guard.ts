@@ -23,6 +23,10 @@ export class AliyunCaptchaGuard implements CanActivate {
     const captchaVerifyParam = (get(req.query, this.key) || get(req.body, this.key)) as unknown
     if (typeof captchaVerifyParam !== 'string') return false
 
-    return await this.aliyunCaptchaService.verify(captchaVerifyParam, this.options.sceneId)
+    try {
+      return await this.aliyunCaptchaService.verify(captchaVerifyParam, this.options.sceneId)
+    } catch (e) {
+      return false
+    }
   }
 }
