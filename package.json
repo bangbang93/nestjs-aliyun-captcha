@@ -13,7 +13,7 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm run prepare"
   },
-  "author": "",
+  "author": "bangbang93 <bangbang93@163.com>",
   "license": "MIT",
   "description": "aliyun captcha module for nestjs",
   "peerDependencies": {
