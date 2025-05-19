@@ -17,7 +17,7 @@
   "license": "MIT",
   "description": "aliyun captcha module for nestjs",
   "peerDependencies": {
-    "@nestjs/common": "^10.3.9"
+    "@nestjs/common": ">=10.3.9"
   },
   "repository": {
     "type": "git",
