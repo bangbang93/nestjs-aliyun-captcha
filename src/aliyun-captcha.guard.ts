@@ -25,7 +25,7 @@ export class AliyunCaptchaGuard implements CanActivate {
 
     try {
       return await this.aliyunCaptchaService.verify(captchaVerifyParam, this.options.sceneId)
-    } catch (e) {
+    } catch {
       return false
     }
   }

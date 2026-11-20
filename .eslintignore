@@ -1,6 +1,0 @@
-dist
-rpc-package/proto
-src/proto
-
-rpc-package/lib
-src/types
